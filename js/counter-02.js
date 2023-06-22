@@ -15,6 +15,8 @@ window.addEventListener('click', function(event) {
             counter.innerHTML = --counter.innerHTML;
         } else if (event.target.closest('.cart-wrapper') && parseInt(counter.innerHTML) === 1) {
             event.target.closest('.cart-item').remove();
+
+            toggleCardStatus();
         }
 
     }

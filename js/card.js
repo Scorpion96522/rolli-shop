@@ -4,7 +4,6 @@ const cartWrapper = document.querySelector('.cart-wrapper')
 window.addEventListener('click', function(event) {
     if (event.target.hasAttribute('data-cart')) {
         const card = event.target.closest('.card');
-        console.log(card);
 
         const productInfo = {
             id: card.dataset.id,
@@ -59,5 +58,8 @@ window.addEventListener('click', function(event) {
         }
 
         card.querySelector('[ data-counter]').innerHTML = '1';
+
+        // отображение статуса корзины, пустая , полная 
+        toggleCardStatus();
     }
 });
