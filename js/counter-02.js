@@ -10,10 +10,13 @@ window.addEventListener('click', function(event) {
   
     if (event.target.dataset.action === 'minus') {
         
+
         if (parseInt(counter.innerHTML) > 1 ) {
             counter.innerHTML = --counter.innerHTML;
-
+        } else if (event.target.closest('.cart-wrapper') && parseInt(counter.innerHTML) === 1) {
+            event.target.closest('.cart-item').remove();
         }
+
     }
     
     if (event.target.dataset.action === 'plus') {
